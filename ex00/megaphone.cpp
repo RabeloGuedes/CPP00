@@ -15,7 +15,7 @@ int	main(int ac, char **av)
 	(void)av;
 	if (ac == 1)
 	{
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n"; 
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (0);
 	}
 	for (uint32_t i = 1; i < (uint32_t)ac; i++)
@@ -24,6 +24,6 @@ int	main(int ac, char **av)
 		if (i < (uint32_t)ac - 1)
 			std::cout << " ";
 	}
-	std::cout << "\n";
+	std::cout << std::endl;
 	return (0);
 }
