@@ -1,11 +1,11 @@
 NAME = megaphone
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address,undefined
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -fsanitize=address,undefined
 
 all: $(NAME)
 
 $(NAME): $(NAME).cpp
-	@$(CC) $(CFLAGS) $(NAME).cpp -o $(NAME)
+	@$(CXX) $(CXXFLAGS) $(NAME).cpp -o $(NAME)
 
 clean:
 	@rm -f $(NAME)
