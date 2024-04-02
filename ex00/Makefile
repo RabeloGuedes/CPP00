@@ -1,6 +1,6 @@
 NAME = megaphone
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -fsanitize=address,undefined
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address,undefined
 
 all: $(NAME)
 
