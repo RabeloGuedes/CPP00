@@ -6,7 +6,7 @@
 /*   By: arabelo- <arabelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 17:46:30 by arabelo-          #+#    #+#             */
-/*   Updated: 2024/04/03 19:04:32 by arabelo-         ###   ########.fr       */
+/*   Updated: 2024/04/05 16:54:54 by arabelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string>
 # include <iostream>
+# include <iomanip>
 # include <Contact.hpp>
 
 class	PhoneBook {
@@ -23,12 +24,11 @@ class	PhoneBook {
 		size_t	index;
 		size_t	capacity;
 	public:
-		Contact	setContact(void);
+		Contact	&setContact(void);
 		Contact	getContact(size_t index);
+		size_t	getCapacity(void);
 		PhoneBook(void);
 		~PhoneBook(void);
 };
-
-void	addContact(PhoneBook phonebook);
 
 #endif

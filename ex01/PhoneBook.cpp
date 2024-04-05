@@ -8,10 +8,14 @@ PhoneBook::~PhoneBook() {
 
 }
 
-Contact	PhoneBook::setContact(void) {
-	if (this->index < this->capacity)
-		this->index = (this->index + 1) % this->capacity;
-	return (this->contacts[this->index]);
+size_t	PhoneBook::getCapacity(void) {
+	return (this->capacity);
+}
+
+Contact	&PhoneBook::setContact(void) {
+	size_t	index = this->index;
+	this->index = (this->index + 1) % this->capacity;
+	return (this->contacts[index]);
 }
 
 Contact	PhoneBook::getContact(size_t index) {

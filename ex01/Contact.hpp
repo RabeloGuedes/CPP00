@@ -6,7 +6,7 @@
 /*   By: arabelo- <arabelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:12:48 by arabelo-          #+#    #+#             */
-/*   Updated: 2024/04/03 19:39:07 by arabelo-         ###   ########.fr       */
+/*   Updated: 2024/04/05 17:01:07 by arabelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ class Contact {
 		std::string	darkestSecret;
 };
 
-void	showInfos(Contact contact);
-
+bool	onlyDigit(std::string str);
+bool	onlyWhiteSpaces(std::string str);
 # endif
