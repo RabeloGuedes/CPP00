@@ -6,7 +6,7 @@
 /*   By: arabelo- <arabelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:00:44 by arabelo-          #+#    #+#             */
-/*   Updated: 2024/04/05 16:54:49 by arabelo-         ###   ########.fr       */
+/*   Updated: 2024/04/06 14:02:43 by arabelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	showSummarizedInfos(Contact contact, size_t index) {
 	for (size_t i = 0; i < 3; i++) {
 		std::string temp = contact.getContactInfo(i);
 		if (temp.length() > 10)
-			std::cout << std::right << str_trim(temp).substr(0, 9) << "." <<  "|";
+			std::cout << std::right << std::setw(9) << str_trim(temp).substr(0, 9) << "." <<  "|";
 		else
 			std::cout << std::right << std::setw(10) << str_trim(temp) << "|";
 	}
@@ -134,7 +134,9 @@ int	main(void) {
 			searchContact(phonebook);
 		}
 		else if (reader == "EXIT") {
-			return (0);
+			break ;
 		}
 	}
+	std::cout << "Exit program!" << std::endl;
+	return (0);
 }

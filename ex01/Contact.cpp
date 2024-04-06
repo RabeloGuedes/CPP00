@@ -6,7 +6,7 @@
 /*   By: arabelo- <arabelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:12:29 by arabelo-          #+#    #+#             */
-/*   Updated: 2024/04/05 17:04:50 by arabelo-         ###   ########.fr       */
+/*   Updated: 2024/04/06 14:01:04 by arabelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,18 @@ void	Contact::setContact(void) {
 	for (size_t i = 0; i < 5; i++) {
 		std::string &field = this->setContactInfo(i);
 		std::getline(std::cin, info);
-		while (i == 3 && !onlyDigit(info)) {
+		while (i == 3 && !onlyDigit(info) && !std::cin.eof()) {
 			std::cerr << "Invalid phoneNumber, try it again!" << std::endl;
 			std::cout << "PhoneNumber: " << std::endl;
 			std::getline(std::cin, info);
 		}
-		if (onlyWhiteSpaces(info)) {
+		if (onlyWhiteSpaces(info) && !std::cin.eof()) {
 			std::cerr << "Invalid input, only white-spaces were typed!" << std::endl;
 			exit(EXIT_FAILURE);
+		}
+		if (std::cin.eof()) {
+			std::cout << "Exit program!" << std::endl;
+			exit(EXIT_SUCCESS);
 		}
 		field = info;
 	}
