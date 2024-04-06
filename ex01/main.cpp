@@ -6,7 +6,7 @@
 /*   By: arabelo- <arabelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:00:44 by arabelo-          #+#    #+#             */
-/*   Updated: 2024/04/06 14:02:43 by arabelo-         ###   ########.fr       */
+/*   Updated: 2024/04/06 16:10:32 by arabelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	displayPhoneBookHeader(void) {
 	std::cout << std::right << std::setw(10) << "index" << "|";
 	std::cout << std::right << std::setw(10) << "firstName" << "|";
 	std::cout << std::right << std::setw(10) << "lastName" << "|";
-	std::cout << std::right << std::setw(10) << "nickName" << std::endl;
+	std::cout << std::right << std::setw(10) << "nickName" << "|" <<  std::endl;
 }
 
 /// @brief This function replaces whites spaces for space and
