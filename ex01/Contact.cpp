@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabelo- <arabelo-@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: arabelo- <arabelo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:12:29 by arabelo-          #+#    #+#             */
-/*   Updated: 2024/04/06 14:01:04 by arabelo-         ###   ########.fr       */
+/*   Updated: 2024/04/09 19:02:41 by arabelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ std::string	Contact::getContactInfo(size_t type) {
 	}
 }
 
-void	Contact::setContact(void) {
+bool	Contact::setContact(void) {
 	std::string info;
 
 	for (size_t i = 0; i < 5; i++) {
@@ -75,14 +75,13 @@ void	Contact::setContact(void) {
 		}
 		if (onlyWhiteSpaces(info) && !std::cin.eof()) {
 			std::cerr << "Invalid input, only white-spaces were typed!" << std::endl;
-			exit(EXIT_FAILURE);
+			return (false);
 		}
-		if (std::cin.eof()) {
-			std::cout << "Exit program!" << std::endl;
-			exit(EXIT_SUCCESS);
-		}
+		if (std::cin.eof())
+			return (false);
 		field = info;
 	}
+	return (true);
 }
 
 /// @brief This function verifies if the given string

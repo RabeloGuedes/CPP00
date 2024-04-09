@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabelo- <arabelo-@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: arabelo- <arabelo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 14:00:44 by arabelo-          #+#    #+#             */
-/*   Updated: 2024/04/06 16:10:32 by arabelo-         ###   ########.fr       */
+/*   Updated: 2024/04/09 19:02:57 by arabelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,11 +112,11 @@ static void	searchContact(PhoneBook phonebook) {
 /// @brief This function calls the setContact member functions from both
 /// PhoneBook and Contact classes, and adds the new given Contact.
 /// @param phonebook 
-static void	addContact(PhoneBook *phonebook) {
+static bool	addContact(PhoneBook *phonebook) {
 	Contact &cont = phonebook->setContact();
 	std::string	info;
 
-	cont.setContact();
+	return (cont.setContact());
 }
 
 int	main(void) {
@@ -128,7 +128,8 @@ int	main(void) {
 		std::cout << "ADD | SEARCH | EXIT" << std::endl;
 		std::getline(std::cin, reader);
 		if (reader == "ADD") {
-			addContact(&phonebook);
+			if (!addContact(&phonebook))
+				break ;
 		}
 		else if (reader == "SEARCH") {
 			searchContact(phonebook);

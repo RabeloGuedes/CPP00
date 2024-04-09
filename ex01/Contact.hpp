@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabelo- <arabelo-@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: arabelo- <arabelo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:12:48 by arabelo-          #+#    #+#             */
-/*   Updated: 2024/04/05 17:01:07 by arabelo-         ###   ########.fr       */
+/*   Updated: 2024/04/09 19:00:22 by arabelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <unistd.h>
 
 class Contact {
 	public:
@@ -22,7 +23,7 @@ class Contact {
 		~Contact(void);
 		std::string	getContactInfo(size_t type);
 		std::string	&setContactInfo(size_t type);
-		void		setContact(void);
+		bool		setContact(void);
 	private:
 		std::string	firstName;
 		std::string	lastName;

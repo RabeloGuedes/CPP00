@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arabelo- <arabelo-@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: arabelo- <arabelo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 17:31:39 by arabelo-          #+#    #+#             */
-/*   Updated: 2024/04/06 15:47:11 by arabelo-         ###   ########.fr       */
+/*   Updated: 2024/04/09 19:11:46 by arabelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	Account::_displayTimestamp(void) {
 	time_t now = time(0);
 	struct tm *local_time = localtime(&now);
 
-	std::cout << "[" << local_time->tm_year + 1900 << local_time->tm_mon << local_time->tm_mday << "_"
+	std::cout << "[" << local_time->tm_year + 1900 << local_time->tm_mon + 1 << local_time->tm_mday << "_"
 		<< local_time->tm_hour << local_time->tm_min << local_time->tm_sec << "] ";
 }
 
