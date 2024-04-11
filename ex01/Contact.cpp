@@ -6,7 +6,7 @@
 /*   By: arabelo- <arabelo-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:12:29 by arabelo-          #+#    #+#             */
-/*   Updated: 2024/04/09 19:02:41 by arabelo-         ###   ########.fr       */
+/*   Updated: 2024/04/11 18:45:39 by arabelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,23 +62,21 @@ std::string	Contact::getContactInfo(size_t type) {
 	}
 }
 
+// OBS: loop para todos os casos, somente fecha quando tem EOF.
+
 bool	Contact::setContact(void) {
 	std::string info;
 
 	for (size_t i = 0; i < 5; i++) {
 		std::string &field = this->setContactInfo(i);
 		std::getline(std::cin, info);
-		while (i == 3 && !onlyDigit(info) && !std::cin.eof()) {
-			std::cerr << "Invalid phoneNumber, try it again!" << std::endl;
-			std::cout << "PhoneNumber: " << std::endl;
+		while ((i == 3 && !onlyDigit(info)) || (onlyWhiteSpaces(info))) {
+			if (std::cin.eof())
+				return (false);
+			std::cerr << "Invalid input!" << std::endl;
+			setContactInfo(i);
 			std::getline(std::cin, info);
 		}
-		if (onlyWhiteSpaces(info) && !std::cin.eof()) {
-			std::cerr << "Invalid input, only white-spaces were typed!" << std::endl;
-			return (false);
-		}
-		if (std::cin.eof())
-			return (false);
 		field = info;
 	}
 	return (true);
